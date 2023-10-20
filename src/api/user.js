@@ -1,8 +1,10 @@
 import request from '@/utils/request'
 
+const api_name = "/admin/system/index"
+
 export function login(data) {
   return request({
-    url: '/vue-admin-template/user/login',
+    url: `${api_name}/login`,
     method: 'post',
     data
   })
@@ -10,7 +12,7 @@ export function login(data) {
 
 export function getInfo(token) {
   return request({
-    url: '/vue-admin-template/user/info',
+    url: `${api_name}/info`,
     method: 'get',
     params: { token }
   })
@@ -18,7 +20,7 @@ export function getInfo(token) {
 
 export function logout() {
   return request({
-    url: '/vue-admin-template/user/logout',
+    url: `${api_name}/logout`,
     method: 'post'
   })
 }
