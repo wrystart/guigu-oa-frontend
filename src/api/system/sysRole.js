@@ -54,4 +54,19 @@ export default {
       data: role
     })
   },
+  //获取所有角色 + 用户所属角色
+  getRoles(adminId) {
+    return request({
+      url: `${api_name}/toAssign/${adminId}`,
+      method: 'get'
+    })
+  },
+  //用户分配角色
+  assignRoles(assginRoleVo) {
+    return request({
+      url: `${api_name}/doAssign`,
+      method: 'post',
+      data: assginRoleVo
+    })
+  }
 }
